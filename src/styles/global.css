@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@tailwind utilities;
 
 html {
   @apply bg-slate-100 font-sans;
@@ -15,4 +14,43 @@ h1 {
 
 header {
   @apply bg-gray-800 text-white p-4;
+}
+
+.nav-links {
+  @apply w-full top-5 left-[48px] hidden m-0;
+}
+
+.nav-links a {
+  @apply block text-center px-[10px] py-0 no-underline text-[1.2rem] font-bold uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  @apply text-[#ff9776];
+}
+
+.expanded {
+  @apply [display:unset];
+}
+
+@media screen and (min-width: 636px) {
+  .nav-links {
+    @apply ml-[5em] flex static w-auto bg-none;
+  }
+
+  .nav-links a {
+    @apply px-[15px] py-[20px];
+  }
+}
+
+.hamburger {
+  @apply pr-1.5 cursor-pointer md:hidden;
+}
+
+.hamburger .line {
+  @apply block w-[30px] h-[5px] mb-1 bg-[#ff9776];
+}
+
+.expanded {
+  @apply [display:unset];
 }
