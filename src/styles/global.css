@@ -1,32 +1,18 @@
 @import "tailwindcss";
+@tailwind utilities;
 
 html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  @apply bg-slate-100 font-sans;
 }
 
 main {
-  color: #333;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 2rem;
-  line-height: 1.5;
+  @apply text-gray-800 mx-auto w-full max-w-prose p-8 leading-relaxed;
 }
 
 h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
+  @apply my-4 text-4xl;
 }
 
 header {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
+  @apply bg-gray-800 text-white p-4;
 }

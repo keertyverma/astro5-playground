@@ -1,4 +1,7 @@
 ---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Navigation from "../components/Navigation.astro";
 import "../styles/global.css"
 const version:number = 5;
 ---
@@ -17,15 +20,10 @@ const version:number = 5;
         </style>
 	</head>
 	<body>
-        <header>
-            <nav class="flex justify-around">
-                <li class="list-none"><a href="/">Home</a></li>
-                <li class="list-none"><a href="/about/">About</a></li>                
-            </nav>
-        </header>
+        <Header />
         <main>
             <slot />
         </main>
-		
+		<Footer />
 	</body>
 </html>
