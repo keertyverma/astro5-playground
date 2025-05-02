@@ -1,9 +1,14 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import Navigation from "../components/Navigation.astro";
 import "../styles/global.css"
-const version:number = 5;
+
+
+interface Props {
+	pageTitle:string;
+}
+
+const {pageTitle = "My App"} = Astro.props 
 ---
 
 <html lang="en">
@@ -12,7 +17,7 @@ const version:number = 5;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro {version}</title>
+		<title>{pageTitle}</title>
         <style is:global>
             h1 {
                 color: purple;
