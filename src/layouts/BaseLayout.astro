@@ -1,6 +1,5 @@
 ---
-import "../styles/global.css";
-
+import "../styles/global.css"
 const version:number = 5;
 ---
 
@@ -11,25 +10,17 @@ const version:number = 5;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro {version}</title>
-        <style>
-            nav {
-                display: flex;
-                justify-content: space-around;
-            }
-            nav li {
-                list-style-type: none;
-            }
-            nav a {
-                color: white;
-                text-decoration: none;
+        <style is:global>
+            h1 {
+                color: purple;
             }
         </style>
 	</head>
 	<body>
         <header>
-            <nav>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>                
+            <nav class="flex justify-around">
+                <li class="list-none"><a href="/">Home</a></li>
+                <li class="list-none"><a href="/about/">About</a></li>                
             </nav>
         </header>
         <main>
