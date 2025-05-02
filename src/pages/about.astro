@@ -1,12 +1,10 @@
 ---
-const myInfo = {
-  firstName: "Keerty",
-  country: "India",
-  occupation: "Software Engineer"
-}
+import myInfo from "../data/sample.json";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<a href="/">Home</a>
 
-<h1>About Me</h1>
-<li>My name is {myInfo.firstName}.</li>
-<li>I live in {myInfo.country} and I work as a {myInfo.occupation}.</li>
+<BaseLayout>
+    <h1>About Me</h1>
+    <li>My name is {myInfo.firstName}.</li>
+    <li>I live in {myInfo.country} and I work as a {myInfo.occupation}.</li>
+</BaseLayout>
