@@ -7,6 +7,7 @@ interface Frontmatter {
   pubDate:Date;
   description:string
   image: {url:string, alt:string}
+  tags: string[]
 }
 
 const {frontmatter} = Astro.props as {frontmatter: Frontmatter};
@@ -18,11 +19,26 @@ const {frontmatter} = Astro.props as {frontmatter: Frontmatter};
   <p><em>{frontmatter.description}</em></p>
   <p>Written by {frontmatter.author}</p>
   <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+  <div class="tags">
+    {frontmatter.tags.map((tag:string) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}
+</div>
   <slot />
 </BaseLayout>
 
 <style>
     p {
         font-size: 1 rem;
+    }
+
+    a {
+        @apply text-[#00539F];
+    }
+
+    .tags {
+        @apply flex flex-wrap
+    }
+
+    .tag {
+        @apply m-[0.5em] border-dotted border-[1px] border-[#a1a1a1] p-[0.3em] text-[1.15em] bg-[#F8FCFD]
     }
 </style>
