@@ -4,8 +4,16 @@ html {
   @apply bg-slate-100 font-sans;
 }
 
+html.dark {
+  @apply bg-[#0d0950] text-white;
+}
+
 main {
   @apply text-gray-800 mx-auto w-full max-w-prose p-8 leading-relaxed;
+}
+
+html.dark main {
+  @apply bg-[#0d0950] text-white;
 }
 
 h1 {
@@ -22,6 +30,10 @@ header {
 
 .nav-links a {
   @apply block text-center px-[10px] py-0 no-underline text-[1.2rem] font-bold uppercase;
+}
+
+.dark .nav-links a {
+  @apply text-white;
 }
 
 .nav-links a:hover,
