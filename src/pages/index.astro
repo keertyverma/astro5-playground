@@ -3,10 +3,11 @@ import "../styles/global.css"
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 import Greeting from "../components/Greeting.tsx";
+import { getCollection } from "astro:content";
 
 
 
-const allPosts = Object.values(import.meta.glob("./posts/*.md", {eager:true}));
+const allPosts = await getCollection("blog")
 ---
 
 <BaseLayout pageTitle="Home">
@@ -14,6 +15,6 @@ const allPosts = Object.values(import.meta.glob("./posts/*.md", {eager:true}));
 	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
 	<p>This is where I will post about my journey learning Astro.</p>
 	<ul>
-		{allPosts.map((post:any)=> <BlogPost url={post.url} title={post.frontmatter.title} />)}
+		{allPosts.map((post:any)=> <BlogPost url={`/posts/${post.id}`} title={post.data.title} />)}
 	</ul>
 </BaseLayout>
