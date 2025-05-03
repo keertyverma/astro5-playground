@@ -2,12 +2,16 @@
 import "../styles/global.css"
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
+import Greeting from "../components/Greeting.tsx";
+
+
 
 const allPosts = Object.values(import.meta.glob("./posts/*.md", {eager:true}));
 ---
 
 <BaseLayout pageTitle="Home">
 	<h1>My Astro Learning Blog</h1>
+	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
 	<p>This is where I will post about my journey learning Astro.</p>
 	<ul>
 		{allPosts.map((post:any)=> <BlogPost url={post.url} title={post.frontmatter.title} />)}
